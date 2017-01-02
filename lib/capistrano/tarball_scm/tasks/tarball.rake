@@ -16,6 +16,8 @@ namespace :tarball do
   end
 
   task :set_current_revision do
-    set :current_revision, tarball_scm.fetch_revision
+    run_locally do
+      set :current_revision, tarball_scm.fetch_revision
+    end
   end
 end
