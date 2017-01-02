@@ -38,7 +38,7 @@ Or install it yourself as:
 Replace any existing SCM plugins in your Capfile with these two lines:
 
 ```ruby
-require_relative "capistrano/tarball_scm"
+require 'capistrano/tarball_scm'
 install_plugin Capistrano::TarballScm::Plugin
 ```
 
