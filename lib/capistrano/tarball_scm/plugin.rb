@@ -20,7 +20,7 @@ module Capistrano
       end
 
       def create
-        excludes = fetch(:tarball_exclude).map { |d| "--exclude #{d}" }.join
+        excludes = fetch(:tarball_exclude).map { |d| "--exclude #{d}" }.join(' ')
         backend.execute(:mkdir, '-p', tarball_dir)
         backend.execute(:tar, '-C', tarball_root, '--exclude', tarball_dir, excludes, '-cjf', tarball_path, '.')
       end
